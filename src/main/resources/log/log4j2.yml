@@ -1,0 +1,29 @@
+configuration:
+  name: log4j2-logger
+  status: info
+
+  properties:
+    property:
+    - name: log-path
+      value: logs
+    - name: layout-pattern
+      value: "%d{yyyy-MM-dd HH:mm:ss.SSS} %highlight{%-5level} [%15.15t] %-50class{1.} : %m%n"
+
+  appenders:
+    Console:
+    - name: Console_Appender
+      target: SYSTEM_OUT
+      PatternLayout:
+        pattern: ${layout-pattern}
+
+  loggers:
+    root:
+      level: debug
+      appender-ref:
+      - ref: Console_Appender
+    logger:
+    - name: com.example.logger
+      additivity: false
+      level: debug
+      appender-ref:
+      - ref: Console_Appender

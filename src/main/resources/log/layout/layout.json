@@ -1,0 +1,50 @@
+{
+    "timestamp": {
+        "$resolver": "timestamp",
+        "pattern": {
+            "format": "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'",
+            "timeZone": "UTC"
+        }
+    },
+    "level": {
+        "$resolver": "level",
+        "field": "name"
+    },
+    "traceId": {
+        "$resolver": "mdc",
+        "key": "traceId"
+    },
+    "spanId": {
+        "$resolver": "mdc",
+        "key": "spanId"
+    },
+    "type": "httpResponse",
+    "clientId": {
+        "$resolver": "mdc",
+        "key": "clientId"
+    },
+    "method": {
+        "$resolver": "mdc",
+        "key": "httpMethod"
+    },
+    "api": {
+        "$resolver": "mdc",
+        "key": "restUri"
+    },
+    "responseTimeMs": {
+        "$resolver": "mdc",
+        "key": "responseTimeMs"
+    },
+    "errorCode": {
+        "$resolver": "mdc",
+        "key": "errorCode"
+    },
+    "clientIp": {
+        "$resolver": "mdc",
+        "key": "clientIp"
+    },
+    "message": {
+        "$resolver": "message"
+    }
+
+}

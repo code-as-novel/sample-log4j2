@@ -1,0 +1,31 @@
+spring:
+    application: 
+        name: log4j2
+    profiles:
+        active: default
+        group:
+            "default": "common, default"
+---
+
+spring:
+    config:
+        activate:
+            on-profile: common
+
+---
+spring:
+    config:
+        activate:
+            on-profile: default
+
+server:
+    port: 7070
+    servlet:
+        context-path: /logging
+        encoding:
+            charset: UTF-8
+            enabled: true
+            force: true
+
+logging:
+    config: classpath:log/log4j2.yml
